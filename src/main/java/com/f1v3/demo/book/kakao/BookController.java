@@ -1,8 +1,6 @@
 package com.f1v3.demo.book.kakao;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,10 +16,15 @@ public class BookController {
 
     private final BookSearchService bookSearchService;
 
-    @GetMapping("/search/{query}")
-    public ResponseEntity<BookSearchResponse> searchBook(@PageableDefault Pageable pageable,
-                                                         @PathVariable String query) {
+    @GetMapping("/search/feign/{query}")
+    public ResponseEntity<BookSearchResponse> feignClientSearch(@PathVariable String query) {
         return ResponseEntity
-                .ok(bookSearchService.searchBook(query));
+                .ok(bookSearchService.searchBookByFeignClient(query));
+    }
+
+    @GetMapping("/search/rest/{query}")
+    public ResponseEntity<BookSearchResponse> restClientSearch(@PathVariable String query) {
+        return ResponseEntity
+                .ok(bookSearchService.searchBookByRestClient(query));
     }
 }

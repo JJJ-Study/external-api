@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "book-api",
         url = "https://dapi.kakao.com",
         configuration = FeignClientRetryConfig.class)
-public interface KakaoBookClient {
+public interface KakaoBookFeignClient {
 
     @GetMapping("/v3/search/book")
     BookSearchResponse searchBooks(
