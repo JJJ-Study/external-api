@@ -1,4 +1,4 @@
-package com.f1v3.demo.book.kakao;
+package com.f1v3.demo.book.kakao.feign;
 
 import feign.Retryer;
 import org.springframework.context.annotation.Bean;

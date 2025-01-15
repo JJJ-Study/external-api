@@ -1,5 +1,6 @@
-package com.f1v3.demo.book.kakao;
+package com.f1v3.demo.book.kakao.feign;
 
+import com.f1v3.demo.book.kakao.BookSearchResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;

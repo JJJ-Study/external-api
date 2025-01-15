@@ -1,8 +1,8 @@
 package com.f1v3.demo.book.kakao;
 
+import com.f1v3.demo.book.kakao.feign.KakaoBookClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
