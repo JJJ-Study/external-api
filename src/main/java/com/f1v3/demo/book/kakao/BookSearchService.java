@@ -2,6 +2,7 @@ package com.f1v3.demo.book.kakao;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,10 +19,9 @@ public class BookSearchService {
 
     public BookSearchResponse searchBook(String query) {
 
-        log.info("kakao key = {}", kakaoProperties.getKey());
         BookSearchResponse response = kakaoBookClient.searchBooks(
                 "KakaoAK " + kakaoProperties.getKey(),
-                "java",
+                query,
                 "title"
         );
 

@@ -18,6 +18,9 @@ public interface KakaoBookClient {
     BookSearchResponse searchBooks(
             @RequestHeader(value = "Authorization", required = true) String authorization,
             @RequestParam(value = "query", required = true) String query,
-            @RequestParam(value = "target", defaultValue = "title") String target
+//            @RequestParam(value = "sort", defaultValue = "accuracy", required = false), // <- default 사용하는게 좋을 것 같음
+//            @RequestParam(value = "page", defaultValue = "1", required = false) int page,       // 1 ~ 50
+//            @RequestParam(value = "size", defaultValue = "10", required = false) int size,      // 1 ~ 50
+            @RequestParam(value = "target", defaultValue = "title", required = false) String target               // title, isbn, publisher, person
     );
 }

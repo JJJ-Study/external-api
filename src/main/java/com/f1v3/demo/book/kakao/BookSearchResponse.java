@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
@@ -30,6 +31,7 @@ public class BookSearchResponse {
         private String publisher;
         private List<String> authors;
         private String thumbnail;
+        private OffsetDateTime datetime; // LocalDateTime -> Error
     }
 
     @ToString
